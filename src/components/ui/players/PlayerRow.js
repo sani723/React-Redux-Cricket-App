@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import MdInfoOutline from 'react-icons/lib/ti/info-large';
 
 const PlayerRow = ({ id, teamId, name, role, status, picture }) =>
@@ -14,5 +15,14 @@ const PlayerRow = ({ id, teamId, name, role, status, picture }) =>
           <MdInfoOutline className="player-info-icon" />
         </div>
     </div>
+
+PlayerRow.propTypes = {
+  id: PropTypes.number.isRequired,
+  teamId: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  role:  PropTypes.string.isRequired,
+  status: PropTypes.bool.isRequired,
+  picture: PropTypes.string.isRequired,
+};
 
 export default PlayerRow

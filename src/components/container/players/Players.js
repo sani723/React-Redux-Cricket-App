@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import PlayerRow from '../../ui/players/PlayerRow';
 import { connect } from 'react-redux';
 import store from '../../../store/';
@@ -41,5 +42,8 @@ const mapStateToProps = (state) => ({
   players: state.players
 });
 
+Players.propTypes = {
+  players: PropTypes.array.isRequired
+}
 
 export default connect(mapStateToProps)(Players);

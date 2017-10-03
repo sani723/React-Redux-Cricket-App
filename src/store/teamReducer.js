@@ -1,6 +1,6 @@
 import ActionTypes from './utils/ActionTypes';
 
-export const teams = (state={}, action) => {
+export const teams = (state=[], action) => {
 
   switch(action.type) {
     case ActionTypes.ADD_TEAM:

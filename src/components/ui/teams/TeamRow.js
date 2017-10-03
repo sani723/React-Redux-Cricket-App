@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import TiArrowForwardOutline from 'react-icons/lib/ti/arrow-forward-outline';
 
 const TeamRow = (props) =>
@@ -17,5 +18,12 @@ const TeamRow = (props) =>
         </div>
       </Link>
     </div>
+
+TeamRow.propTypes = {
+  id: PropTypes.string.isRequired,
+  logo: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  status: PropTypes.bool.isRequired
+};
 
 export default TeamRow

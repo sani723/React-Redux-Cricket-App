@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import TeamRow from '../../ui/teams/TeamRow'
 import { connect } from 'react-redux';
 import store from '../../../store/';
@@ -13,11 +14,10 @@ class Teams extends Component {
   }
 
   render() {
+    const { teams } = this.props;
     return (
       <div className="row team-list">
-        {
-          this.props.teams.map( (team, i) => <TeamRow key={i} {...team} /> )
-        }
+        { teams.map( (team, i) => <TeamRow key={i} {...team} /> ) }
       </div>
     );
   }
@@ -29,5 +29,9 @@ const mapStateToProps = state => (
     teams: state.teams
   }
 );
+
+Teams.propTypes = {
+  teams: PropTypes.array.isRequired
+}
 
 export default connect(mapStateToProps)(Teams);
