@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../../assets/css/header.css';
 import logo from '../../../logo.svg';
 
@@ -13,13 +14,13 @@ const Header = () => (
 				    	<span className="icon-bar"></span>
 				    	<span className="icon-bar"></span>
 					</button>
-					<a href="/"><img src={logo} className="App-logo" alt="Logo" /></a>
+					<Link to="/"><img src={logo} className="App-logo" alt="Logo" /></Link>
 				</div>
         <div className="collapse navbar-collapse" id="st-navbar-collapse">
           <ul className="nav navbar-nav navbar-right">
-            <li><a href="/" activeclassname="active">Home</a></li>
-            <li><a href="/about" activeclassname="active">About</a></li>
-            <li><a href="/teams" activeclassname="active">Teams</a></li>
+            <li><Link to="/" activeclassname="active">Home</Link></li>
+            <li><Link to="/about" activeclassname="active">About</Link></li>
+            <li><Link to="/teams" activeclassname="active">Teams</Link></li>
           </ul>
         </div>
       </div>
