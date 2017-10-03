@@ -8,12 +8,12 @@ import Players from '../../container/players/Players';
 const Routes = () => (
   <main>
     <Switch>
-      <div>
+      
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/teams" component={Teams} />
         <Route path="/players/:tid" component={Players} />
-      </div>
+
     </Switch>
   </main>
 );

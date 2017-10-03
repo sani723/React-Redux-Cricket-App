@@ -29,6 +29,30 @@ class TeamApi {
       }, delay);
     });
   }
+
+  static saveTeam(team) {
+	 team = Object.assign({}, team);
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        // Simulate server-side validation
+        const minTeamNameLength = 7;
+        if (team.title.length < minTeamNameLength) {
+          reject(`Team Name must be at least ${minTeamNameLength} characters.`);
+        }
+
+        if (team.id) {
+          const existingTeamIndex = teams.findIndex(a => a.id === team.id);
+          teams.splice(existingTeamIndex, 1, team);
+        } else {
+          team.id = generateId(team);
+          teams.push(team);
+        }
+
+        resolve(team);
+      }, delay);
+    });
+  }
+
 }
 
 export default TeamApi;
