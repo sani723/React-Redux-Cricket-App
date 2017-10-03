@@ -16,6 +16,11 @@ const PlayerRow = ({ id, teamId, name, role, status, picture }) =>
         </div>
     </div>
 
+PlayerRow.defaultProps = {
+  status: true,
+  picture: "http://e2.365dm.com/17/06/150x150/skysports-pink-ball-county-cricket_3986917.jpg"
+}
+
 PlayerRow.propTypes = {
   id: PropTypes.number.isRequired,
   teamId: PropTypes.string.isRequired,

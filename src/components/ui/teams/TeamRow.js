@@ -19,6 +19,10 @@ const TeamRow = (props) =>
       </Link>
     </div>
 
+TeamRow.defaultProps = {
+  status: true
+}
+
 TeamRow.propTypes = {
   id: PropTypes.string.isRequired,
   logo: PropTypes.string.isRequired,

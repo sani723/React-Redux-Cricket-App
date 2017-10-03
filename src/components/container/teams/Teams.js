@@ -8,8 +8,7 @@ import './teams.css';
 
 class Teams extends Component {
 
-  constructor(props) {
-    super(props);
+  componentDidMount() {
     store.dispatch( loadTeams() );
   }
 
